@@ -1,0 +1,244 @@
+/* ========== Reset CSS ==========*/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+body {
+	padding-top: 100px;
+}
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+}
+li a, .logo a, .link-arrendar {
+	text-decoration: none;
+	color: #000;
+	font-size: 11pt;
+}
+nav ul li a {
+	padding-bottom: 35px;
+}
+li a:hover {
+	border-bottom: 3px solid #0b72fd;
+}
+li {
+	list-style: none;
+}
+
+/* ========== Nav Bar ==========*/
+
+.nav-bar {
+	width: 100%;
+	height: 95px;
+	background: #fff;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 50px 0 50px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.nav-bar .logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.nav-bar ul {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.nav-bar ul li {
+	margin-right: 30px;
+}
+.barra-pesquisa form select {
+	width: 220px;
+	height: 30px;
+	padding-left: 10px;
+	margin-right: 10px;
+	border: 1px solid #c1c1c1;
+	border-radius: 5px;
+}
+.barra-pesquisa form button {
+	width: 120px;
+	height: 30px;
+	background-color: #0b72fd;
+	color: #fff;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.barra-pesquisa form button:hover {
+	background-color: #0151bd;
+}
+
+/* ========== Main ==========*/
+
+main h1, h2 {
+	margin: 20px 0 20px 50px;
+	color: #0b72fd;
+}
+main h1 {
+	font-size: 16pt;
+}
+main h2 {
+	font-size: 15pt;
+}
+p {
+	line-height: 30px;
+	margin: 0 50px 0 50px;
+}
+.apartamentos {
+	margin: 20px 50px 20px 50px;
+	display: flex;
+	flex-wrap: wrap;
+}
+.apartamento {
+	width: 180px;
+	height: 210px;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	margin: 0 20px 15px 0;
+}
+.apartamento span {
+	font-size: 10pt;
+}
+.apartamento img {
+	border: 1px solid transparent;
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+
+/* ========== Footer ==========*/
+
+footer {
+	background: rgba(0, 0, 0, 0.9);
+	width: 100%;
+	height:auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+.asides {
+	width: 100%;
+	height: 200px;
+	display: flex;
+	justify-content: space-around;
+	padding-top: 30px;
+}
+.asides ul h1 {
+	color: #fff;
+	font-size: 13pt;
+	margin-bottom: 10px;
+}
+footer .copyright {
+	font-size: 10pt;
+	color: #f5f5f5;
+	margin-top: 35px;
+	margin-bottom: 25px;
+}
+.asides ul {
+	height: auto;
+	display: flex;
+	flex-direction: column;
+}
+.asides ul li {
+	margin-top: 15px;
+}
+.asides ul li a {
+	color: #fff;
+}
+
+/* ========== Login ==========*/
+
+main {
+	position: relative;
+}
+.login-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+.login-wrapper form {
+	width: 450px;
+	height: auto;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 50px 0 50px 0;
+}
+.login-wrapper form input {
+	width: 390px;
+	height: 45px;
+	margin-bottom: 20px;
+	border: 1px solid #c1c1c1;
+	border-radius: 5px;
+	padding-left: 10px;
+}
+.login-wrapper form button {
+	width: 390px;
+	height: 45px;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	background-color: #0b72fd;
+	color: #fff;
+	cursor: pointer;
+	margin-top: 10px;
+}
+.login-wrapper form button:hover {
+	background-color: #0151bd;
+}
+.login-wrapper form h1 {
+	font-size: 15pt;
+	color: #000;
+	margin-bottom: 35px;
+}
+.info span {
+	display: block;
+	margin-bottom: 5px;
+}
+.ocupado {
+	color: green;
+}
+.desocupado {
+	color: red;
+}
+.mensagem {
+	background-color: #fff;
+	width: 410px;
+	height: 50px;
+	display:flex;
+	align-items: center;
+	justify-content: space-around;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	border-radius: 5px;
+}
+.mensagem .close {
+	font-size: 15pt;
+	cursor: pointer;
+}
+.mensagem .close:hover {
+	color: red;
+}
+.message-box {
+	width: 410px;
+	height: 50px;
+	margin: auto;
+	margin-top: 20px;
+}

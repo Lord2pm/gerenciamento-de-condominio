@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        Condomínios Nossa Casa
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+
+<body>
+    {% block menu %}
+    <header>
+        <nav class="nav-bar">
+            <div class="logo">
+                <a href="/">Condomínios Nossa Casa</a>
+            </div>
+            <ul>
+                <li><a href="/">Página Inicial</a></li>
+                <li><a href="/login" class="admin">Administrar</a></li>
+                {% block barra_pesquisa %}
+                <div class="barra-pesquisa">
+                    <form action="/pesquisar" method="POST">
+                        <select name="topologia" required>
+                            <option value="0" selected disabled>Topologia do apartamento</option>
+                            <option value="T1">T1</option>
+                            <option value="T2">T2</option>
+                            <option value="T3">T3</option>
+                        </select>
+                        <button>Pesquisar</button>
+                    </form>
+                </div>
+                {% endblock %}
+            </ul>
+        </nav>
+    </header>
+    {% endblock %}
+    {% set mensagens = get_flashed_messages() %}
+    {% if mensagens %}
+    {% for mensagem in mensagens %}
+    <div class="message-box">
+        <div class="mensagem">
+            <span>{{ mensagem }}</span>
+            <span class="close">x</span>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% block main %}
+    <main>
+        <div class="overview">
+            <h1>Condomínio Nossa Casa - O seu lar é nosso negócio</h1>
+            <p>Temos disponíveis para si, casas em todas as províncias da região mais a sul do país, nomeadamente
+                Namibe, Huíla, Cunene e Cuando Cubango.</p>
+            <p>Casas com os mais variados tamanhos e topologia para acomodar a si e a sua família. Não perca mais tempo,
+                venha e faça parte desta grande família, porque a casa ideal para a sua família, é nossa!</p>
+        </div>
+        <h2>Nossos Apartamentos</h2>
+        <div class="apartamentos">
+            {% for apartment in apartments %}
+            <a href="/arrendar/{{ apartment.id }}" class="link-arrendar">
+                <div class="apartamento">
+                    <img src="{{ url_for('static', filename='img/home.jpg') }}" alt="">
+                    <div class="info">
+                        <span>Topologia: {{ apartment.topologia }}</span>
+                        <span>Província: {{ apartment.provincia }}</span>
+                        {% if apartment.estado == "Ocupado" %}
+                        <span class="ocupado">Estado: {{ apartment.estado }}</span>
+                        {% else %}
+                        <span class="desocupado">Estado: {{ apartment.estado }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </main>
+    {% endblock %}
+    <footer>
+        <div class="asides">
+            <ul class="nossas-redes-sociais">
+                <h1>Redes sociais</h1>
+                <li><a href="">Facebook: web.facebook.com/CondomíniosNossaCasa</a></li>
+                <li><a href="">WhatsApp: (+244) 935 613 281</a></li>
+                <li><a href="">Email: condominiosnossacasa@gmail.com</a></li>
+            </ul>
+            <ul>
+                <h1>Nossos Parceiros</h1>
+                <li><a href="">Kero</a></li>
+                <li><a href="">Omatapalo</a></li>
+                <li><a href="">Shoprite</a></li>
+            </ul>
+            <ul>
+                <h1>Termos e Responsabilidade</h1>
+                <li><a href="">Nossos termos em PDF</a></li>
+            </ul>
+        </div>
+        <p class="copyright">&copy; Condomínios Nossa Casa - Todos os direiros reservados.</p>
+    </footer>
+</body>
+
+</html>

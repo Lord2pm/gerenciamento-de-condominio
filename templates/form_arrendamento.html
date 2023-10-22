@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+
+{% block title %}
+Condomínios Nossa Casa | Arrendar
+{% endblock %}
+
+{% block barra_pesquisa %}
+
+{% endblock %}
+
+{% block main %}
+
+<div class="login-wrapper">
+    <form action="/arrendar/{{ id }}" method="POST">
+        <h1>Preencha os seus dados pessoais</h1>
+        <input type="text" name="nome" placeholder="Seu nome completo" required>
+        <input type="text" name="bi" placeholder="Seu N° de BI" required>
+        <input type="email" name="email" placeholder="Seu e-mail" required>
+        <input type="text" name="telefone" placeholder="Seu telefone" required>
+        <button>Arrendar</button>
+    </form>
+</div>
+
+{% endblock %}
